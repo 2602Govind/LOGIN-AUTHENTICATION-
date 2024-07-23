@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Authentication System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            animation: fadeIn 1s;
+        }
+        .container h3 {
+            margin-top: 0;
+        }
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .container button:hover {
+            background-color: #218838;
+        }
+        .container p {
+            margin: 10px 0 0;
+            color: red;
+        }
+        #securedPage {
+            display: none;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="registrationForm" class="container">
+        <h3>Register</h3>
+        <label for="registerUsername">Username:</label>
+        <input type="text" id="registerUsername" name="registerUsername">
+        <label for="registerPassword">Password:</label>
+        <input type="password" id="registerPassword" name="registerPassword">
+        <button onclick="register()">Register</button>
+        <p id="registerMessage"></p>
+    </div>
+    
+    <div id="loginForm" class="container">
+        <h3>Login</h3>
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" name="loginUsername">
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword">
+        <button onclick="login()">Login</button>
+        <p id="loginMessage"></p>
+    </div>
+
+    <div id="securedPage" class="container">
+        <h3>Secured Page</h3>
+        <p>Welcome to the secured page!</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
